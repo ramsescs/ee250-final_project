@@ -1,0 +1,76 @@
+Q1.
+
+Number 2 & 4 are not suitable at all for a linear regression model, as the realtion between the outcome and the input variable does not fit a linear function. For both, using the mean as a predictor of the outcome variable is probably better than using a linear regression (maybe for #2 the linear model would do slightly better). 
+
+Number 3 would be perfectly fitted with a linear regression model if we take out the outlier at x = 13.
+
+For number 2, the quadratic regression seems much more suitable. It seems like the relation of the variables has the form:  y = ax^2 + bx + c, where a is negative and b > 0, that's why the y increases with x, but the slope is always decreasing, being positive at first but then becoming negative at certain point. In order to get the parameters we would have to make the assumption that this really the model that fits it, and then find the quatities a, b and c that minimize the mean squared error of the model using the provided dataset.
+
+Q2. 
+
+m represents the magnitude of the effect of the current over the predicted voltage, in this case this is the resistance since Ohm's Law tells us that: V = IR. 
+
+The c value is 0, as we can observe from the resulting linear fit which goes through the origin (0,0). When I = 0, V = 0 (no constant involved), which fits the Ohm's Law deduction. 
+
+Q3. 
+
+Prediction of the LRM:
+I(15V) = 3.86688312
+I(20V) = 5.15584416
+I(25V) = 6.44480519
+I(50V) = 12.88961039
+
+Using Ohm's Law: I = V/R and R = 3.84
+I(15V) = 3.90625
+I(20V) = 5.20833
+I(25V) = 6.51042
+I(50V) = 13.0208
+
+It is important to understand that the linear regression is a model like any other, this is, a way to represent reality in a simpler way. In reality, measurements have noise thus the linear regression will not be able to perfectly account for this fact, and instead it is just trying to fit the general trend. When we do a linear regression there will always be an irreducible error, no matter how much data we gatter we won't be able to get rid of it. It can be due to a lot of different factors, such as the choice of variables (the whole effect on the outcome variable is not only predicted by the chosen input variables) or, as in this case, the noise due to measures which is obviously independent from the current and not predictable by it.
+
+Moreover, it is also worth noting that in the linear regression the parameter m found corresponded to a resistance R = 3.879093198992444, which is different from the one used in the Ohm's law calculation, and this is because of the reasons previously explained. 
+
+Finally, the sample size is probably not big enough (only 21 samples) and as we add more samples we'd get a result more similar than the one found with the Ohm's law.s
+
+Q4. 
+
+Green = Cent
+Blue = Nickel
+Orange = Dollar
+
+The difference in weight might be due to various reasons, for example, noise during the weighing of the sampled coins or slight erros while making them. The specification is just the standard to follow, but in practice slight discrepancies might always occur. Also if the coins are not brand new, there might be other things affecting the weight such as dirt in the coins, or wear and tear.
+
+Q5. Finding which is the distribution that returns the biggest probability density given the weight. 
+
+Q6. Using the light sensor to measure the light reflected.
+
+Q7. A through D are linearly separable since it is easy to draw a line that separates the blue and orange classes, and even when this separation is not perfect it serves as a boundary that will predict well most of cases. Clearly there's no line we can draw that can separate both classes in the datasets E and F, thus they're not linearly separable.
+
+Q8. Circle, elipse, parabola, among others.
+
+Q9. 
+
+Selecting an even K is probably not a good practice because there's a chance that the neighbors will evenly split in two classes. For example, it is easy to see that with K = 2 in the example the neighbors will be blue and green, and the algorithm would have to randomly choose where to classify the new data point, which is not a good way to predict the label. 
+
+Selecting a K = 1 is not recommendable because the model would be highly overfitted to the train data, thus, considering the training data does not perfectly reflect the reality (because we don't have all the data available in the world, and even if we had it would be very inneficient to work with it all), it will not be good predicting cases outside the training data.
+
+Selecting a K too high, i.e, close to the number of data points, would almost equivalent as predicting to the class with the highest presence in the dataset.
+
+Q10.
+
+H3 is the best since it maximizes the minimum distance of the hyperplane and the 2 classes.
+
+H4 is the worst since the margin is minimal.
+
+H2 seems to have a margin a bit larger than H1, but they've basically the seem margin (as far as I can see).
+
+Thus the hierarchy would be something like: H3 > H2 >= H1 > H4
+
+
+ 
+
+
+
+
+
+
